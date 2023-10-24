@@ -1,0 +1,84 @@
+/* @tailwind base; */
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  --red: rgb(255, 0,0);
+} */
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+} */
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.page-header {
+  view-transition-name: test;
+}
+/* 
+::view-transition-old(root) {
+  animation: fade-and-scale-out 0.5s ease-in-out 1 forwards;
+
+}
+
+::view-transition-new(root) {
+  animation: fade-and-scale-in 1s ease-in-out 1 forwards;
+
+} */
+
+::view-transition-old(test) {
+  animation: fade-and-scale-out 0.5s ease-in-out 1 forwards;
+
+}
+
+::view-transition-new(test) {
+  animation: fade-and-scale-in 1s ease-in-out 1 forwards;
+
+}
+
+
+@keyframes fade-and-scale-in {
+  from {
+    opacity: 0;
+    background-color: red;
+    transform:  translateX(-1000px);
+  }
+  to {
+    opacity: 1;
+    background-color: transparent;
+    transform:  translateX(0);
+  }
+}
+
+@keyframes fade-and-scale-out {
+  from {
+    opacity: 1;
+    background-color: transparent;
+
+    transform:  translateX(0);
+    
+  }
+  to {
+    opacity: 0;
+    background-color: red;
+    transform:  translateX(1000px);
+  }
+}
