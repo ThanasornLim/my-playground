@@ -1,8 +1,9 @@
-import TaskContainer from "@/containers/Task/Task";
-import React from "react";
+import React from 'react';
+
+import TaskContainer from '@/containers/Task/Task';
 
 const TaskPage = () => {
-    return <TaskContainer />;
+	return <TaskContainer />;
 };
 
 export default TaskPage;

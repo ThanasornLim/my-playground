@@ -1,8 +1,9 @@
-import InfiniteScroll from "@/containers/InfiniteScroll/InfiniteScroll";
-import React from "react";
+import React from 'react';
+
+import InfiniteScroll from '@/containers/InfiniteScroll/InfiniteScroll';
 
 const InfiniteScrollPage = () => {
-    return <InfiniteScroll />;
+	return <InfiniteScroll />;
 };
 
 export default InfiniteScrollPage;

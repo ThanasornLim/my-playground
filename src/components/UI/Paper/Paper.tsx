@@ -1,35 +1,35 @@
-import React from "react";
+import React from 'react';
 import {
-    Paper as ManTinePaper,
-    PaperBaseProps as ManTinePaperBaseProps,
-    PaperProps as MantinePaperProps,
-    createPolymorphicComponent,
-} from "@mantine/core";
+	createPolymorphicComponent,
+	Paper as ManTinePaper,
+	PaperBaseProps as ManTinePaperBaseProps,
+	PaperProps as MantinePaperProps,
+} from '@mantine/core';
 
 interface PaperProps extends ManTinePaperBaseProps, MantinePaperProps {
-    children?: React.ReactNode;
-    //     className?: string;
+	children?: React.ReactNode;
+	//     className?: string;
 }
 
 const BasePaper: React.FC<PaperProps> = ({
-    radius,
-    withBorder,
-    shadow,
-    className,
-    children,
-    ...props
+	radius,
+	withBorder,
+	shadow,
+	className,
+	children,
+	...props
 }) => {
-    return (
-        <ManTinePaper
-            className={className || ""}
-            shadow={shadow || "md"}
-            {...props}
-        >
-            {children}
-        </ManTinePaper>
-    );
+	return (
+		<ManTinePaper
+			className={className || ''}
+			shadow={shadow || 'md'}
+			{...props}
+		>
+			{children}
+		</ManTinePaper>
+	);
 };
 
-const Paper = createPolymorphicComponent<"div", PaperProps>(BasePaper);
+const Paper = createPolymorphicComponent<'div', PaperProps>(BasePaper);
 
 export default Paper;
